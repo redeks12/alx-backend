@@ -39,5 +39,5 @@ class Server:
         """returns a list of index pages"""
         assert type(page) == int == type(page_size)
         assert page > 0 and page_size > 0
-        val = index_range(page, page_size)
+        val: tuple = index_range(page, page_size)
         return self.dataset()[val[0] : val[1]]
