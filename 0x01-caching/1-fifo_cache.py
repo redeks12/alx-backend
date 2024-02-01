@@ -8,9 +8,11 @@ class FIFOCache(BaseCaching):
     """FIFOCache implementation"""
 
     def __init__(self):
+        """Constructor function for FIFOCache"""
         super().__init__()
 
     def put(self, key, item):
+        """Put a key into the cache for this"""
         if key is None or item is None:
             return
 
