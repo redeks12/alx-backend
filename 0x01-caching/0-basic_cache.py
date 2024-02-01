@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """0x01. Caching"""
 
-from parent import BaseCaching
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
