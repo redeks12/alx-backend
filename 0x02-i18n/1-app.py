@@ -2,27 +2,24 @@
 """0x02. i18n"""
 
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
 class Config:
     LANGUAGES = ["en", "fr"]
-    TIMEZONE = "UTC"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
+    BABEL_DEFAULT_LOCALE = "en"
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
-babel = Babel()
-babel.init_app(
-    app,
-    default_locale=app.config["LANGUAGES"][0],
-    default_timezone=app.config["TIMEZONE"],
-)
+babel = Babel(app)
 
 
 @app.route("/", methods=["GET"])
 def home():
+    """default home page"""
     return render_template("1-index.html")
 
 
