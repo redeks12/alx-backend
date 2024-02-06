@@ -1,8 +1,8 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 """0x02. i18n"""
 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_babel import Babel
 
 
@@ -14,8 +14,8 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-babel = Babel(app)
 app.url_map.strict_slashes = False
+babel = Babel(app)
 
 
 @app.route("/", methods=["GET"])
